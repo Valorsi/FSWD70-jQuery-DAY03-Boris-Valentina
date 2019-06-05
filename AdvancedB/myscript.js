@@ -1,9 +1,19 @@
-$(document).ready(function(){
-	$("#moveme").click( function(){
-		$("#moveme").animate({
-			bottom: '100px'
-		}, 'slow', 'linear')
-		$("#moveme").fadeOut(2000);
-		$("#moveme").fadeIn(2000);
-	});
+$(document).ready(function() {
+    $(document).on('mousemove', function(e) {
+        $('#moveme').css({
+            left: e.pageX - $("#moveme").width() / 2,
+            top: e.pageY - $("#moveme").height() / 2,
+        });
+        // $("#moveme").click(function() {
+        //     $("#moveme").attr("id", "newId");
+        // });
+    });
+
+    $("#plane").click(function() {
+        $("#plane").animate({
+            top: '500px'
+        }, 'slow', 'linear')
+        $("#plane").fadeOut(2000);
+        $("#plane").fadeIn(2000);
+    });
 });

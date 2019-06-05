@@ -36,7 +36,7 @@ footer
 	border-top: 1px solid #999;
 }
 
-div#moveme
+div#moveme , div#newId
 {
 	width: 6em;
 	height: 6em;
@@ -50,6 +50,10 @@ div#moveme
 	/*border-radius: 5px;*/
 	/*cursor: default;*/
 	position: absolute;
+}
+
+#plane {
+	position: relative;
 }
 
 h1
