@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>jQuery animation</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<style>
+		* { padding: 0; margin: 0; }
+		body { font-family: sans-serif; font-size: 100%; margin: 10px; color: #222; background-color: #eee; }
+		#animate { width: 180px; height: 120px; font-size: 2em; text-align: center; line-height: 118px; color: #fff; background-color: #00c; border: 2px solid #006; border-radius: 5px; }
+		
+		li {
+			cursor: pointer;
+		}
+
+		#container {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		input, button {
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+	<h1>jQuery Animation</h1>
+
+	<div id="animate">ANIMATE</div>
+
+	<ul>
+		<li>bananas</li>
+		<li>apricots</li>
+		<li>pasta</li>
+		<li>salmon</li>
+		<li>salad</li>
+	</ul>
+	<input type="text" value="write here" />
+	<button>add to list</button>
+</div>
+
+	<script>
+		$(document).ready(function (){
+			$("#animate").fadeOut(4000).fadeIn(4000);
+			$("li").on('click', function (){
+				$(this).animate({
+					opacity: 0.0,
+					paddingLeft: '+=100'
+				}, 500, function() {
+					$(this).remove();
+				});
+			});
+			$("button").on("click", function() {
+				var item = $("input").val();
+				var li = $("<li>" + item + "</li>");
+				$("ul").append(li);
+			});
+		});
+	</script>
+
+</body>
+</html>
