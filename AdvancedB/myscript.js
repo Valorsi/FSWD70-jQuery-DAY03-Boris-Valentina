@@ -1,8 +1,8 @@
 $(document).ready(function() {
     $(document).on('mousemove', function(e) {
         $('#moveme').css({
-            left: e.pageX - $("#moveme").width() / 2,
-            top: e.pageY - $("#moveme").height() / 2,
+            left: e.pageX - 128,
+            top: e.pageY - 128,
         });
         // $("#moveme").click(function() {
         //     $("#moveme").attr("id", "newId");
